@@ -4,16 +4,19 @@ const dateFormat = require('../utils/dateFormat');
 
 const ReplySchema = new Schema(
   {
-    // set custom id to avoid confusion with parent comment's _id field
+    // set custom id to avoid confusion with parent comment _id
     replyId: {
       type: Schema.Types.ObjectId,
       default: () => new Types.ObjectId()
     },
     replyBody: {
-      type: String
+      type: String,
+      required: true_id,
+      trim: true
     },
     writtenBy: {
-      type: String
+      type: String,
+      required: true,
     },
     createdAt: {
       type: Date,
